@@ -10,49 +10,32 @@ import producto from "./pages/productos/index";
 import empleado from "./pages/empleados/index";
 import registrarEmpleado from "./pages/empleados/registrarEmpleado";
 import Home from "./pages/home/home";
-import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { getJwt } from "./helpers/jwtHelper";
 import Login from "./pages/login/index";
-import history from "./helpers/history";
-import Checkin from "./components/chekin";
-import { render } from "@testing-library/react";
 const jwt = getJwt();
-
-class App extends Component {
+class Logged extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: false,
-      descripcionMesa: "",
-    };
+    this.state = { empleado: undefined };
   }
-  callbackFunctionMesa = (listarMesasData) => {
-    this.setState({ descripcionMesa: listarMesasData }, this.goToChekin);
-  };
   componentDidMount() {
-    if (jwt) {
-      this.setState({
-        isLoggedIn: true,
-      });
+    const jwt = getJwt();
+    {
+      this.props.history.push();
     }
   }
-  goToChekin = () => {
-    console.log(this.state.descripcionMesa)
-    history.push("/checkin");
-  };
   render() {
-    if (this.state.isLoggedIn) {
+    if (!jwt) {
       return (
-        <Router history={history}>
+        <Login></Login>
+      );
+    }else
+    {
+        <BrowserRouter>
           <div>
             <Nav />
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <Home descripcionMesa={this.callbackFunctionMesa} />
-              )}
-            />
+            <Route exact path="/" component={Home} />
             <Route path="/agregarRol" component={Agregar} />
             <Route path="/categoriaProducto" component={categoriaProducto} />
             <Route path="/categoriaPlato" component={categoriaPlato} />
@@ -61,18 +44,9 @@ class App extends Component {
             <Route path="/producto" component={producto} />
             <Route path="/empleado" component={empleado} />
             <Route path="/registrarEmpleado" component={registrarEmpleado} />
-            <Route
-              path="/checkin"
-              render={() => (
-                <Checkin descripcionMesa={this.state.descripcionMesa} />
-              )}
-            />
           </div>
-        </Router>
-      );
-    } else {
-      return <Login />;
+        </BrowserRouter>
     }
   }
 }
-export default App;
+export default Logged;
