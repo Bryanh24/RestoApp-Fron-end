@@ -13,7 +13,7 @@ import {
 import "bootstrap/dist/css/bootstrap.css";
 import request from "superagent";
 
-const rutaLogin = "http://localhost:3000/api/empleado/login";
+const rutaLogin = "https://restoapp-backend.herokuapp.com/api/empleado/login";
 
 class Login extends Component {
   constructor(props) {

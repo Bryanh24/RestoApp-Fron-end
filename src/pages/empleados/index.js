@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
-const ruta = "http://localhost:3000/api/empleado";
-const rutaGetRol = "http://localhost:3000/api/roles";
+const ruta = "https://restoapp-backend.herokuapp.com/api/empleado";
+const rutaGetRol = "https://restoapp-backend.herokuapp.com/api/roles";
 const token = getJwt();
 
 class EmpleadoAdd extends Component {

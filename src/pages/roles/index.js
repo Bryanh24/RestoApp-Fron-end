@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
-const ruta = "http://localhost:3000/api/roles";
+const ruta = "https://restoapp-backend.herokuapp.com/api/roles";
 const token = getJwt();
 
 class RolAdd extends Component {

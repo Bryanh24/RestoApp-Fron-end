@@ -15,7 +15,7 @@ import history from "../helpers/history";
 import Checkin from "./chekin";
 
 const token = getJwt();
-const ruta = "http://localhost:3000/api/mesa";
+const ruta = "https://restoapp-backend.herokuapp.com/api/mesa";
 
 export default class extends Component {
   constructor() {

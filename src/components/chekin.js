@@ -14,10 +14,10 @@ import request from "superagent";
 import { getJwt } from "../helpers/jwtHelper";
 
 const token = getJwt();
-const ruta = "http://localhost:3000/api/categoriaPlato";
-const rutaGetPlato = "http://localhost:3000/api/plato/get";
-const rutaGetProducto = "http://localhost:3000/api/producto/get";
-const rutaGetCategoriaProducto = "http://localhost:3000/api/categoriaProducto";
+const ruta = "https://restoapp-backend.herokuapp.com/api/categoriaPlato";
+const rutaGetPlato = "https://restoapp-backend.herokuapp.com/api/plato/get";
+const rutaGetProducto = "https://restoapp-backend.herokuapp.com/api/producto/get";
+const rutaGetCategoriaProducto = "https://restoapp-backend.herokuapp.com/api/categoriaProducto";
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",

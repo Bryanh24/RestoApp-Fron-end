@@ -13,8 +13,8 @@ import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
 const token = getJwt();
-const ruta = "http://localhost:3000/api/plato";
-const rutaGetCategoria = "http://localhost:3000/api/categoriaPlato";
+const ruta = "https://restoapp-backend.herokuapp.com/api/plato";
+const rutaGetCategoria = "https://restoapp-backend.herokuapp.com/api/categoriaPlato";
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",

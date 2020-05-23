@@ -5,8 +5,8 @@ import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
 const token = getJwt();
-const rutaGetCategoria = "http://localhost:3000/api/categoriaProducto";
-const ruta = "http://localhost:3000/api/producto";
+const rutaGetCategoria = "https://restoapp-backend.herokuapp.com/api/categoriaProducto";
+const ruta = "https://restoapp-backend.herokuapp.com/api/producto";
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",

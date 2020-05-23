@@ -13,7 +13,7 @@ import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
 const token = getJwt();
-const ruta = "http://localhost:3000/api/mesa";
+const ruta = "https://restoapp-backend.herokuapp.com/api/mesa";
 const libre = 1
 
 class MesaAdd extends Component {

@@ -13,7 +13,7 @@ import request from "superagent";
 import { getJwt } from "../../helpers/jwtHelper";
 
 const token = getJwt();
-const ruta = "http://localhost:3000/api/categoriaPlato";
+const ruta = "https://restoapp-backend.herokuapp.com/api/categoriaPlato";
 
 class CategoriaAdd extends Component {
   constructor(props) {
