@@ -59,9 +59,11 @@ class PlatoAdd extends Component {
           window.location.reload();
         });
     } else {
+      debugger
       request
         .put(ruta + "/" + document.getElementById("TbIdPlato").value)
         .set("Content-Type", "application/x-www-form-urlencoded")
+        .set("token", token)
         .send({ NombrePlato: document.getElementById("TbNombrePlato").value })
         .send({
           DescripcionPlato: document.getElementById("TbDescripcionPlato").value,
@@ -78,6 +80,7 @@ class PlatoAdd extends Component {
         })
         .end(function (err, res) {
           const plato = JSON.parse(res.text);
+          debugger
           if (plato.error) {
             localStorage.removeItem("token-jwt");
           }
@@ -91,6 +94,7 @@ class PlatoAdd extends Component {
       request
         .del(ruta + "/" + document.getElementById("TbIdPlato").value)
         .set("Accept", "application/json")
+        .set("token", token)
         .end(function (err, res) {
           const plato = JSON.parse(res.text);
           if (plato.error) {

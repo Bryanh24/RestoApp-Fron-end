@@ -10,7 +10,7 @@ import producto from "./pages/productos/index";
 import empleado from "./pages/empleados/index";
 import registrarEmpleado from "./pages/empleados/registrarEmpleado";
 import Home from "./pages/home/home";
-import { BrowserRouter, Router } from "react-router-dom";
+import {Router } from "react-router-dom";
 import { getJwt } from "./helpers/jwtHelper";
 import Login from "./pages/login/index";
 import history from "./helpers/history";
